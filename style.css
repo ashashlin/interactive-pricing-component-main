@@ -1,0 +1,361 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+body {
+  /* 3. Add accessible line-height */
+  line-height: 1.5;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 5. Improve media defaults */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+/*
+  9. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+:root {
+  --ff-1: Manrope;
+
+  --fs-1: .625rem;
+  --fs-2: .75rem;
+  --fs-3: .8125rem;
+  --fs-4: .875rem;
+  --fs-5: .9375rem;
+  --fs-6: 1rem;
+  --fs-7: 1.25rem;
+  --fs-8: 1.75rem;
+  --fs-9: 2rem;
+  --fs-10: 2.5rem;
+
+  --fw-400: 400;
+  --fw-600: 600;
+  --fw-800: 800;
+
+  --light-blue-1: #F9FAFF;
+  --light-blue-2: #ECF0FB;
+  --light-blue-3: #CFD8EF;
+  --medium-blue: #BECDFF;
+  --navy: #293356;
+  --grayish-blue: #848EAD;
+  --light-aqua-1: #A4F3EB;
+  --light-aqua-2: #7AEADF;
+  --dark-aqua: #24AEA1;
+  --aqua: #10D8C4;
+  --orange: #FF8D68;
+  --light-orange: #FEEDE8;
+  --white: #FFFFFF;
+}
+
+body {
+  font-family: var(--ff-1);
+  font-weight: var(--fw-600);
+  font-size: var(--fs-3);
+  color: var(--grayish-blue);
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.link-btn {
+  background-color: var(--navy);
+  padding: .75rem 2.875rem;
+  border-radius: 1.28rem;
+}
+
+.main__hero {
+  position: relative;
+  text-align: center;
+  background-color: var(--light-blue-1);
+  padding: 5.5rem 1.5rem;
+  z-index: 0;
+}
+
+.hero__background {
+  position: absolute;
+  top: -3rem;
+  left: 0;
+  z-index: -100;
+}
+
+.hero__circles {
+  position: absolute;
+  top: 3.5625rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -50;
+}
+
+.hero__title {
+  font-weight: var(--fw-800);
+  color: var(--navy);
+  margin-bottom: .5rem;
+}
+
+.hero__text {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  margin-bottom: 4rem;
+}
+
+.hero__sub-card {
+  background-color: var(--white);
+  max-width: 33.75rem;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  border-radius: .5rem;
+  box-shadow: 1px 2px 20px rgba(0 0 0 / .08);
+}
+
+.sub-card__grid {
+  display: grid;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.sub-card__service {
+  font-size: var(--fs-2);
+  font-weight: var(--fw-800);
+  text-transform: uppercase;
+  letter-spacing: 1.71px;
+}
+
+.sub-card__price {
+  grid-row: 3 / 4;
+  font-size: var(--fs-4);
+}
+
+.sub-card__price-num {
+  font-size: var(--fs-9);
+  font-weight: var(--fw-800);
+  color: var(--navy);
+  letter-spacing: -.8px;
+}
+
+.sub-card__slider-container {
+  position: relative;
+}
+
+.sub-card__slider {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  height: .5rem;
+  background-color: var(--light-blue-2);
+  border-radius: .3125rem;
+}
+
+.sub-card__slider::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: var(--aqua);
+  background-image: url(images/icon-slider.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+  box-shadow: 1px 15px 20px var(--light-aqua-2);
+  cursor: pointer;
+}
+
+.sub-card__slider:active::-webkit-slider-thumb {
+  background-color: var(--dark-aqua);
+}
+
+.sub-card__billing {
+  display: flex;
+  justify-content: center;
+  gap: .75rem;
+  font-size: var(--fs-2);
+}
+
+.sub-card__toggle {
+  width: 2.75rem;
+  height: 1.375rem;
+  background-color: var(--light-blue-3);
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: background-color 250ms;
+}
+
+.sub-card__toggle.active {
+  background-color: var(--light-aqua-2);
+}
+
+.sub-card__toggle-btn {
+  width: .875rem;
+  height: .875rem;
+  background-color: var(--white);
+  border-radius: 50%;
+  margin: .25rem  1.5rem .25rem .25rem;
+  transition: margin-left 250ms;
+}
+
+.sub-card__toggle.active .sub-card__toggle-btn {
+  margin-left: 1.5rem;
+  margin-right: .25rem;
+}
+
+.sub-card__discount {
+  font-size: var(--fs-1);
+  color: var(--orange);
+  background-color: var(--light-orange);
+  padding: .125rem .5rem;
+  border-radius: .59rem;
+  margin-left: .3125rem;
+}
+
+.sub-card__trial {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  font-size: var(--fs-2);
+  margin-top: 4rem;
+}
+
+.sub-card__trial::before {
+  position: absolute;
+  top: -21%;
+  left: -1.5rem;
+  right: -1.5rem;
+  content: '';
+  height: 1px;
+  background-color: var(--light-blue-2);
+}
+
+.sub-card__trial-info-container {
+  display: flex;
+  flex-direction: column;
+  gap: .625rem;
+}
+
+.sub-card__trial-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.sub-card__btn {
+  font-weight: var(--fw-800);
+  color: var(--medium-blue);
+  transition: color 150ms;
+}
+
+.sub-card__btn:hover {
+  color: var(--white);
+}
+
+@media (min-width: 90rem) {
+  .hero__background {
+    top: 0;
+  }
+
+  .hero__title {
+    font-size: var(--fs-8);
+    margin-bottom: .75rem;
+  }
+
+  .hero__text {
+    flex-direction: row;
+    justify-content: center;
+    gap: .3125rem;
+  }
+
+  .hero__sub-card {
+    padding: 2.5rem 3rem 2rem;
+  }
+
+  .sub-card__grid {
+    grid-template-columns: auto auto;
+    align-items: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .sub-card__service {
+    grid-column: 1 / 2;
+    justify-self: start;
+    font-size: var(--fs-4);
+  }
+
+  .sub-card__price-num {
+    font-size: var(--fs-10);
+  }
+
+  .sub-card__price {
+    grid-row: 1 / 2;
+    grid-column: 2 / -1;
+    justify-self: end;
+    font-size: var(--fs-6);
+  }
+
+  .sub-card__slider-container {
+    grid-column: 1 / -1;
+  }
+
+  .sub-card__billing {
+    gap: 1rem;
+  }
+
+  .sub-card__discount {
+    margin-left: .5625rem;
+  }
+
+  .sub-card__trial {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 7.9rem;
+    margin-top: 4.56rem;
+  }
+
+  .sub-card__trial-info-container {
+    align-items: start;
+  }
+
+  .sub-card__trial::before {
+    top: -40%;
+    left: -3rem;
+    right: -3rem;
+  }
+}

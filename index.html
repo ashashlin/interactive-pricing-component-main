@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <link rel="stylesheet" href="style.css">
+
+  <title>Frontend Mentor | Interactive pricing component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <main class="main">
+    <section class="main__hero">
+      <svg class="hero__background" xmlns="http://www.w3.org/2000/svg" width="1440" height="449">
+        <path fill="#F1F5FE" fill-rule="evenodd" d="M0 0h1440v449H191.5C85.737 449 0 363.263 0 257.5V0z"/>
+      </svg>
+
+      <svg class="hero__circles" xmlns="http://www.w3.org/2000/svg" width="146" height="145">
+        <g fill="none" fill-rule="evenodd" stroke="#CFD8EF">
+          <circle cx="63" cy="82" r="62.5"/>
+          <circle cx="105" cy="41" r="40.5"/>
+        </g>
+      </svg>
+
+      <h1 class="hero__title">
+        Simple, traffic-based pricing
+      </h1>
+
+      <p class="hero__text">
+        <span>
+          Sign-up for our 30-day trial.
+        </span>
+        <span>
+          No credit card required.
+        </span>
+      </p>
+
+      <div class="hero__sub-card">
+        <div class="sub-card__grid">
+          <span class="sub-card__service js-sub-card__service">
+          </span>
+          <span class="sub-card__price">
+            <span class="sub-card__price-num js-sub-card__price-num"></span> / month
+          </span>
+
+          <div class="sub-card__slider-container">
+            <input class="sub-card__slider js-sub-card__slider" type="range" name="subscription" id="subscription" min="0" max="100" value="50" step="50" oninput="subCardSlider()">
+          </div>
+        </div>
+
+        <div class="sub-card__billing">
+          <span class="sub-card__monthly-billing">
+            Monthly Billing
+          </span>
+
+          <div class="sub-card__toggle js-sub-card__toggle">
+            <div class="sub-card__toggle-btn"></div>
+          </div>
+
+          <span class="sub-card__yearly-billing">
+            Yearly Billing
+            <span class="sub-card__discount js-sub-card__discount">
+            </span>
+          </span>
+        </div>
+
+        <div class="sub-card__trial">
+          <div class="sub-card__trial-info-container">
+            <div class="sub-card__trial-info">
+              <svg class="sub-card__trial-check" xmlns="http://www.w3.org/2000/svg" width="9" height="8">
+                <path fill="none" stroke="#10D8C4" stroke-width="2" d="M1 4.134l1.907 1.908L7.949 1"/>
+              </svg>
+
+              <span class="sub-card__trial-text">
+                Unlimited websites
+              </span>
+            </div>
+
+            <div class="sub-card__trial-info">
+              <svg class="sub-card__trial-check" xmlns="http://www.w3.org/2000/svg" width="9" height="8">
+                <path fill="none" stroke="#10D8C4" stroke-width="2" d="M1 4.134l1.907 1.908L7.949 1"/>
+              </svg>
+
+              <span class="sub-card__trial-text">
+                100% data ownership
+              </span>
+            </div>
+
+            <div class="sub-card__trial-info">
+              <svg class="sub-card__trial-check" xmlns="http://www.w3.org/2000/svg" width="9" height="8">
+                <path fill="none" stroke="#10D8C4" stroke-width="2" d="M1 4.134l1.907 1.908L7.949 1"/>
+              </svg>
+
+              <span class="sub-card__trial-text">
+                Email reports
+              </span>
+            </div>
+          </div>
+
+          <a class="link-btn sub-card__btn" href="#">
+            Start my trial
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">AL</a>.
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
